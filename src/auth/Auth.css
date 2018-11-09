@@ -1,0 +1,28 @@
+.authContainer {
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+    padding: 5em 2em 0em 2em;
+    width: 33%;
+    max-width: 400px;
+    min-width: 200px;
+    border: 1px solid #d2d2d2;
+    box-shadow: 0px 8px 18px #c4c4c4;
+    text-align: center !important;
+    color: #272722;
+}
+
+.authH {
+    padding-bottom: 2em;
+}
+
+.authDiv {
+    /* display: inline-block;
+    text-align: left; */
+}
+
+.regText {
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
