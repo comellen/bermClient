@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reac
 import BikeIndex from '../bikes/BikeIndex';
 import RideIndex from '../rides/RideIndex';
 import TrailIndex from '../trails/TrailIndex';
+import './Home.css';
 
 const Home = (props) => {
     return (
@@ -10,10 +11,10 @@ const Home = (props) => {
             {/* <BikeIndex token={props.sessionToken} updateBikesArray={props.fetchBikes} />
             <RideIndex token={props.sessionToken} updateRidesArray={props.fetchRides} />
             <TrailIndex token={props.sessionToken} updateTrailsArray={props.fetchTrails} /> */}
-            <div className='row'>
-                <div className='col-4'>
+            <div className="cardContainer">
+                <div className="cards">
                     <Card>
-                        <CardImg top width='100%' src='' />
+                        <CardImg top width="100%" src="" />
                         <CardBody>
                             <CardTitle>Bikes</CardTitle>
                             <CardSubtitle></CardSubtitle>
@@ -23,9 +24,9 @@ const Home = (props) => {
                         </CardBody>
                     </Card>
                 </div>
-                <div className='col-4'>
+                <div className="cards">
                     <Card>
-                        <CardImg top width='100%' src='' />
+                        <CardImg top width="100%" src="" />
                         <CardBody>
                             <CardTitle>Rides</CardTitle>
                             <CardSubtitle></CardSubtitle>
@@ -35,9 +36,9 @@ const Home = (props) => {
                         </CardBody>
                     </Card>
                 </div>
-                <div className='col-4'>
+                <div className="cards">
                     <Card>
-                        <CardImg top width='100%' src='' />
+                        <CardImg top width="100%" src="" />
                         <CardBody>
                             <CardTitle>Trails</CardTitle>
                             <CardSubtitle></CardSubtitle>

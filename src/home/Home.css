@@ -1,0 +1,11 @@
+.cardContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  .cards {
+      margin: 2em;
+      width: 333px;
+  }
