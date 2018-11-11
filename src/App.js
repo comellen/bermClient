@@ -43,7 +43,10 @@ export default class App extends Component {
       return (
         <Switch>
           <Route path="/" exact>
-            <Home sessionToken={this.state.sessionToken} />
+            <div>
+              <Navigation clickLogout={this.logout} />
+              <Home sessionToken={this.state.sessionToken} />
+            </div>
           </Route>
         </Switch>
       );
@@ -61,7 +64,6 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <Navigation clickLogout={this.logout} />
           {this.protectedViews()}
         </div>
       </Router>

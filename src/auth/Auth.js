@@ -18,17 +18,25 @@ export default class Auth extends Component {
 
     render() {
         return (
-            <Container className="authContainer">
-                <div className="authDiv">
-                    {(this.state.signingUp) ?
-                        <Signup setToken={this.props.setToken} /> :
-                        <Login setToken={this.props.setToken} />}
+            <Container className="authWrapper">
+                <div className="bermInfo">
+                <h1 className="bigLogo">berm</h1>
+                <h3>Track your mountain biking journey with <span className="logoText">berm</span>. Keep track of your bikes and upgrades, add the collection of trails you've ridden and trails you want to ride,  and keep track of and update your trail times.</h3>
+
+
                 </div>
-                <p className="regText">
-                    {(this.state.signingUp) ?
-                        <span>Have an account? Login <a href="#" onClick={this.switchClick}>here</a>.</span> :
-                        <span>Register for an account <a href="#" onClick={this.switchClick}>here</a>.</span>}
-                </p>
+                <div className="authContainer">
+                    <div className="authDiv">
+                        {(this.state.signingUp) ?
+                            <Signup setToken={this.props.setToken} /> :
+                            <Login setToken={this.props.setToken} />}
+                    </div>
+                    <p className="regText">
+                        {(this.state.signingUp) ?
+                            <span>Have an account? Login <a href="#" onClick={this.switchClick}>here</a>.</span> :
+                            <span>Register for an account <a href="#" onClick={this.switchClick}>here</a>.</span>}
+                    </p>
+                </div>
             </Container>
         );
     }

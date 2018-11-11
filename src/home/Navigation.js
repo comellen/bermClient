@@ -16,7 +16,7 @@ export default class Navigation extends Component {
     render() {
         return (
             <div>
-                <Navbar color="faded" light expand="md">
+                <Navbar color="faded" light expand="sm">
                     <NavbarBrand href="/">berm</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>

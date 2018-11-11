@@ -30,7 +30,6 @@ export default class Signup extends Component {
             .then((response) => response.json())
             .then((data) => {
                 this.props.setToken(data.sessionToken);
-                // localStorage.setItem('owner', this.data.user.id);
             });
     }
     render() {
@@ -43,7 +42,6 @@ export default class Signup extends Component {
                         <br />
                         <Input id="signupEmail" type="email" name="email" placeholder="you@email.com" onChange={this.handleChange} />
                     </FormGroup>
-                    <br />
                     <FormGroup className="authInputs">
                         <Label for="password">PASSWORD</Label>
                         <br />
