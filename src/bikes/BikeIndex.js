@@ -44,7 +44,7 @@ export default class BikeIndex extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
                     <ModalBody>
-                        <BikeCreate />
+                        <BikeCreate token={this.props.token} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>

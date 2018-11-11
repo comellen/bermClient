@@ -20,10 +20,10 @@ export default class RideIndex extends Component {
     }
 
     componentDidMount() {  //changed from WillMount
-        this.fetchBikes();
+        this.fetchRides();
     }
 
-    fetchBikes = () => {
+    fetchRides = () => {
         fetch('http://localhost:3033/rides/getall', {
             method: 'GET',
             headers: new Headers({
@@ -44,7 +44,7 @@ export default class RideIndex extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Ride</ModalHeader>
                     <ModalBody>
-                        <RideCreate />
+                        <RideCreate token={this.props.token} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>

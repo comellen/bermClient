@@ -27,13 +27,14 @@ export default class Login extends Component {
         })
         .then((response) => response.json())
         .then((data) => this.props.setToken(data.sessionToken));
+        // localStorage.setItem('owner', this.data.user.id);
     }
 
     render() {
       return (
         <div>
             <h1 className="authH">LOGIN</h1>
-            <Form formName="login" onSubmit={this.handleSubmit}>
+            <Form className="login" onSubmit={this.handleSubmit}>
                 <FormGroup className="authInputs">
                     <Label for="email">EMAIL</Label>
                     <br />

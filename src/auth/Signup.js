@@ -30,14 +30,14 @@ export default class Signup extends Component {
             .then((response) => response.json())
             .then((data) => {
                 this.props.setToken(data.sessionToken);
-                localStorage.setItem('owner', data.user.id);
+                // localStorage.setItem('owner', this.data.user.id);
             });
     }
     render() {
         return (
             <div>
                 <h1 className="authH">SIGN UP</h1>
-                <Form formName="signup" onSubmit={this.handleSubmit}>
+                <Form className="signup" onSubmit={this.handleSubmit}>
                     <FormGroup className="authInputs">
                         <Label for="email">EMAIL</Label>
                         <br />

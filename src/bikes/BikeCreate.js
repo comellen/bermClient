@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import './BikeCreate.css';
 
 export default class BikeCreate extends Component {
     constructor(props) {
@@ -19,8 +20,7 @@ export default class BikeCreate extends Component {
             brakes: '',
             tires: '',
             additionalComponents: '',
-            plannedUpgrades: '',
-            owner: localStorage.getItem('owner')
+            plannedUpgrades: ''
         };
     }
 
@@ -57,7 +57,7 @@ export default class BikeCreate extends Component {
                     tires: '',
                     additionalComponents: '',
                     plannedUpgrades: '',
-                    owner: localStorage.getItem('owner')
+                    // owner: localStorage.getItem('owner')
                 });
             });
     }
@@ -90,7 +90,7 @@ export default class BikeCreate extends Component {
                         <Label for="suspension">Suspension</Label>
                         <br />
                         <Input type="select" name="suspension" id="suspension" value={this.state.suspension} onChange={this.handleChange}>
-                            <option></option>
+                            <option value=""></option>
                             <option value="Full suspension">Full suspension</option>
                             <option value="Hardtail">Hardtail</option>
                             <option value="None">None</option>
@@ -110,7 +110,7 @@ export default class BikeCreate extends Component {
                         <Label for="wheelSize">Wheel Size</Label>
                         <br />
                         <Input type="select" name="wheelSize" id="wheelSize" value={this.state.wheelSize} onChange={this.handleChange}>
-                            <option></option>
+                            <option value=""></option>
                             <option value="24">24</option>
                             <option value="26">26</option>
                             <option value="27.5">27.5</option>
@@ -145,12 +145,12 @@ export default class BikeCreate extends Component {
                     <FormGroup>
                         <Label for="additionalComponents">Additional Components</Label>
                         <br />
-                        <Input id="additionalComponents" type="text" name="additionalComponents" value={this.state.additionalComponents} placeholder="" onChange={this.handleChange} />
+                        <textarea rows="3" cols="30" id="additionalComponents" type="text" name="additionalComponents" value={this.state.additionalComponents} onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="plannedUpgrades">Planned Upgrades</Label>
                         <br />
-                        <Input id="plannedUpgrades" type="text" name="plannedUpgrades" value={this.state.plannedUpgrades} placeholder="" onChange={this.handleChange} />
+                        <textarea rows="3" cols="30" id="plannedUpgrades" type="text" name="plannedUpgrades" value={this.state.plannedUpgrades} onChange={this.handleChange} />
                     </FormGroup>
                     <Button type="submit" color="primary">Submit</Button>
                 </Form>

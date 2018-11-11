@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import './RideCreate.css'
+import './RideCreate.css';
 
 export default class RideCreate extends Component {
     constructor(props) {
@@ -9,10 +9,9 @@ export default class RideCreate extends Component {
             trail: '',
             location: '',
             bike: '',
-            time: '',
+            time: '00:00:00',
             notes: '',
-            date: '',
-            owner: localStorage.getItem('owner')
+            date: ''
         };
     }      
 
@@ -40,7 +39,7 @@ export default class RideCreate extends Component {
                     time: '',
                     notes: '',
                     date: '',
-                    owner: localStorage.getItem('owner')
+                    // owner: localStorage.getItem('owner')
                 });
             });
     }
@@ -72,7 +71,7 @@ export default class RideCreate extends Component {
                     <FormGroup>
                         <Label for="date">Date</Label>
                         <br />
-                        <Input id="date" type="date" value="2018-11-08" min="1900-01-01" name="date" value={this.state.date} onChange={this.handleChange} />
+                        <Input id="date" type="text" name="date" value={this.state.date} placeholder="YYYY/MM/DD" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="notes">Notes</Label>
