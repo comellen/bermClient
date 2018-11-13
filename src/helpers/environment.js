@@ -9,7 +9,7 @@ switch (window.location.hostname) {
    // this is the deployed react application
    case 'bermclient.herokuapp.com':
        // this is the full url of your deployed API
-       APIURL = 'https://cmm-bermapi.herokuapp.com/'
+       APIURL = 'https://cmm-bermapi.herokuapp.com'
 }
 
 export default APIURL;
