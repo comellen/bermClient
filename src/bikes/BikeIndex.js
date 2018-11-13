@@ -85,11 +85,11 @@ export default class BikeIndex extends Component {
 
         return (
             <div>
-                <Button color="submit" onClick={this.toggle}>Add a bike</Button>
+                <Button className="addButton" color="submit" onClick={this.toggle}>Add a bike</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
                     <ModalBody>
-                        <BikeCreate sessionToken={this.props.sessionToken} />
+                        <BikeCreate sessionToken={this.props.sessionToken} fetchBikes={this.fetchBikes} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>

@@ -31,9 +31,9 @@ const RideTable = (props) => {
                                 <td>{ride.notes}</td>
                                 <td>{ride.date}</td>
                                 <td>
-                                    <Button id={ride.id} onClick={e => props.update(e, ride)} color="primary">Update</Button>
+                                    <Button className="tableButtons" id={ride.id} onClick={e => props.update(e, ride)} color="info">Update</Button>
 
-                                    <Button id={ride.id} onClick={e => props.delete(e, ride)} color="danger">Delete</Button>
+                                    <Button className="tableButtons" id={ride.id} onClick={e => props.delete(e, ride)} color="danger">Delete</Button>
                                 </td>
                             </tr>
                         );

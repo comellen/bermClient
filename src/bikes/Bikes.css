@@ -1,7 +1,7 @@
-#notes {
+#additionalComponents, #plannedUpgrades {
     display: block;
     width: 100%;
-    height: calc(2.25rem + 66px);
+    height: calc(2.25rem + 33px);
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -12,4 +12,8 @@
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.addButton {
+    margin-bottom: 2em;
 }

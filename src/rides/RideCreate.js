@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import './RideCreate.css';
+import './Rides.css';
 import APIURL from '../helpers/environment';
 
 export default class RideCreate extends Component {
@@ -41,6 +41,7 @@ export default class RideCreate extends Component {
                     date: '',
                 });
             });
+            this.props.fetchRides();
     }
 
     render() {
@@ -77,7 +78,7 @@ export default class RideCreate extends Component {
                         <br />
                         <textarea rows="3" cols="30" id="notes" type="text" name="notes" value={this.state.notes} onChange={this.handleChange} />
                     </FormGroup>
-                    <Button type="submit" color="primary">Submit</Button>
+                    <Button type="submit" color="primary" onClick={this.props.fetchRides}>Submit</Button>
                 </Form>
             </div >
         );

@@ -44,32 +44,23 @@ export default class App extends Component {
   protectedViews = () => {
     if (this.state.sessionToken === localStorage.getItem('token')) {
       return (
-        <Switch>
-          <Route exact path="/">
-            <div>
-              <Navigation clickLogout={this.logout} />
+        <div>
+          <Navigation clickLogout={this.logout} />
+          <Switch>
+            <Route exact path="/">
               <Home sessionToken={this.state.sessionToken} />
-            </div>
-          </Route>
-          <Route path="/rides">
-            <div>
-              <Navigation clickLogout={this.logout} />
+            </Route>
+            <Route path="/rides">
               <RideIndex sessionToken={this.state.sessionToken} />
-            </div>
-          </Route>
-          <Route path="/trails">
-            <div>
-              <Navigation clickLogout={this.logout} />
+            </Route>
+            <Route path="/trails">
               <TrailIndex sessionToken={this.state.sessionToken} />
-            </div>
-          </Route>
-          <Route path="/bikes">
-            <div>
-              <Navigation clickLogout={this.logout} />
+            </Route>
+            <Route path="/bikes">
               <BikeIndex sessionToken={this.state.sessionToken} />
-            </div>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+        </div>
       );
     } else {
       return (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import './TrailCreate.css'
+import './Trails.css'
 import APIURL from '../helpers/environment';
 
 export default class TrailCreate extends Component {
@@ -43,6 +43,7 @@ export default class TrailCreate extends Component {
                 date: ''
                 });
             });
+            this.props.fetchTrails();
     }
 
     render() {
@@ -94,7 +95,7 @@ export default class TrailCreate extends Component {
                         <br />
                         <textarea rows="3" cols="30" id="notes" type="text" name="notes" value={this.state.notes} onChange={this.handleChange} />
                     </FormGroup>
-                    <Button type="submit" color="primary">Submit</Button>
+                    <Button type="submit" color="primary" onClick={this.props.fetchTrails}>Submit</Button>
                 </Form>
             </div >
         );

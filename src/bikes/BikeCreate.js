@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import './BikeCreate.css';
+import './Bikes.css';
 import APIURL from '../helpers/environment';
 
 export default class BikeCreate extends Component {
@@ -60,6 +60,7 @@ export default class BikeCreate extends Component {
                     plannedUpgrades: ''
                 });
             });
+            this.props.fetchBikes();
     }
 
     render() {
@@ -152,7 +153,7 @@ export default class BikeCreate extends Component {
                         <br />
                         <textarea rows="3" cols="30" id="plannedUpgrades" type="text" name="plannedUpgrades" value={this.state.plannedUpgrades} onChange={this.handleChange} />
                     </FormGroup>
-                    <Button type="submit" color="primary">Submit</Button>
+                    <Button type="submit" color="primary" onClick={this.props.fetchBikes}>Submit</Button>
                 </Form>
             </div>
         );
