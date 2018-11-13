@@ -33,9 +33,9 @@ const TrailTable = (props) => {
                                 <td>{trail.completed}</td>
                                 <td>{trail.date}</td>
                                 <td>
-                                    <Button id={trail.id} onClick={e => props.update(e, trail)} color="warning">Update</Button>
+                                    <Button id={trail.id} onClick={e => props.update(e, trail)} color="primary">Update</Button>
 
-                                    <Button id={trail.id} onClick={props.delete} color="danger">Delete</Button>
+                                    <Button id={trail.id} onClick={e => props.delete(e, trail)} color="danger">Delete</Button>
                                 </td>
                             </tr>
                         );

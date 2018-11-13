@@ -57,8 +57,7 @@ export default class BikeCreate extends Component {
                     brakes: '',
                     tires: '',
                     additionalComponents: '',
-                    plannedUpgrades: '',
-                    // owner: localStorage.getItem('owner')
+                    plannedUpgrades: ''
                 });
             });
     }

@@ -77,13 +77,18 @@ export default class RideIndex extends Component {
     }
 
     render() {
+        const rides = this.state.rides.length >= 1 ?
+        <RideTable 
+                rides={this.state.rides}
+                update={this.rideUpdate}
+                delete={this.rideDelete} /> :
+                <h2>Log your first ride here.</h2>
+
         return (
             <div>
                 <Button color="success" onClick={this.toggle}>Add a ride</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>
-                        Add Ride
-                    </ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Add Ride</ModalHeader>
                     <ModalBody>
                         <RideCreate sessionToken={this.props.sessionToken} fetchRides={this.fetchRides} />
                     </ModalBody>
@@ -92,12 +97,12 @@ export default class RideIndex extends Component {
                     </ModalFooter>
                 </Modal>
 
-                <RideTable rides={this.state.rides} />
+                {rides}
 
                 {
                     this.state.updatePressed ?
                         <RideEdit
-                            t={this.state.updatePressed}
+                            pressed={this.state.updatePressed}
                             update={this.rideUpdate}
                             ride={this.state.rideToUpdate} /> :
                         <div></div>

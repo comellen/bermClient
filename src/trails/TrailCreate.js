@@ -33,7 +33,15 @@ export default class TrailCreate extends Component {
         })
             .then((res) => res.json())
             .then((newTrail) => {
-                this.props.updateTrailsArray();
+                this.setState({
+                name: '',
+                location: '',
+                length: '0',
+                difficulty: '',
+                notes: '',
+                completed: '',
+                date: ''
+                });
             });
     }
 

@@ -33,7 +33,7 @@ const RideTable = (props) => {
                                 <td>
                                     <Button id={ride.id} onClick={e => props.update(e, ride)} color="primary">Update</Button>
 
-                                    <Button id={ride.id} onClick={props.delete} color="danger">Delete</Button>
+                                    <Button id={ride.id} onClick={e => props.delete(e, ride)} color="danger">Delete</Button>
                                 </td>
                             </tr>
                         );

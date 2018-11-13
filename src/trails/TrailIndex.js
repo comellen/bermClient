@@ -77,13 +77,18 @@ export default class TrailIndex extends Component {
     }
 
     render() {
+        const trails = this.state.trails.length >= 1 ?
+        <TrailTable 
+                trails={this.state.trails}
+                update={this.trailUpdate}
+                delete={this.trailDelete} /> :
+                <h2>Enter a trail for your list.</h2>
+
         return (
             <div>
                 <Button color="submit" onClick={this.toggle}>Add a trail</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>
-                        Add Trail
-                    </ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Add Trail</ModalHeader>
                     <ModalBody>
                         <TrailCreate sessionToken={this.props.sessionToken} fetchTrails={this.fetchTrails} />
                     </ModalBody>
@@ -92,12 +97,12 @@ export default class TrailIndex extends Component {
                     </ModalFooter>
                 </Modal>
 
-                <TrailTable trails={this.state.trails} />
+                {trails}
 
                 {
                     this.state.updatePressed ?
                         <TrailEdit
-                            t={this.state.updatePressed}
+                            pressed={this.state.updatePressed}
                             update={this.trailUpdate}
                             trail={this.state.trailToUpdate} /> :
                         <div></div>

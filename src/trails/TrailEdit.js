@@ -42,8 +42,8 @@ export default class TrailEdit extends Component {
     render() {
         return (
             <div>
-                <Modal isOpen={true}> {/* removed state.modal*/ }
-                    <ModalHeader>Edit Trail</ModalHeader>  {/*removed toggle*/}
+                <Modal isOpen={true}>
+                    <ModalHeader>Edit Trail</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup>
@@ -94,9 +94,6 @@ export default class TrailEdit extends Component {
                             <Button type="submit" color="primary">Submit</Button>
                         </Form>
                     </ModalBody>
-                    <ModalFooter>
-                        <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter>
                 </Modal>
             </div>
         );

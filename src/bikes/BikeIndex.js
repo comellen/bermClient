@@ -76,13 +76,18 @@ export default class BikeIndex extends Component {
             .then(res => this.fetchBikes());
     }
     render() {
+        // const bikes = this.state.bikes.length >= 1 ?
+        // <BikeCards 
+        //         bikes={this.state.bikes}
+        //         update={this.bikeUpdate}
+        //         delete={this.bikeDelete} /> :
+        //         <h2>Add bikes here.</h2>
+
         return (
             <div>
                 <Button color="submit" onClick={this.toggle}>Add a bike</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>
-                        Add Bike
-                    </ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
                     <ModalBody>
                         <BikeCreate sessionToken={this.props.sessionToken} />
                     </ModalBody>
@@ -90,12 +95,13 @@ export default class BikeIndex extends Component {
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
-                {/* <BikeCards bikes={this.state.bikes} /> */}
+
+                {/* {bikes} */}
 
                 {
                     this.state.updatePressed ?
                         <BikeEdit
-                            t={this.state.updatePressed}
+                            pressed={this.state.updatePressed}
                             update={this.bikeUpdate}
                             bike={this.state.bikeToUpdate} /> :
                         <div></div>
