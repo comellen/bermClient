@@ -3,6 +3,7 @@ import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import BikeCreate from './BikeCreate';
 import BikeCards from './BikeCards';
 import BikeEdit from './BikeEdit';
+import APIURL from '../helpers/environment';
 
 export default class BikeIndex extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class BikeIndex extends Component {
     }
 
     fetchBikes = () => {
-        fetch('http://localhost:3033/bikes/getall', {
+        fetch(`${APIURL}/bikes/getall`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ export default class BikeIndex extends Component {
     }
 
     bikeUpdate = (event, bike) => {
-        fetch(`http:localhost:3033/bikes/update/${bike.id}`, {
+        fetch(`${APIURL}/bikes/update/${bike.id}`, {
             method: 'PUT',
             body: JSON.stringify({ bike: bike }),
             headers: new Headers({
@@ -64,7 +65,7 @@ export default class BikeIndex extends Component {
     }
 
     bikeDelete = (event, bike) => {
-        fetch(`http:localhost:3033/bikes/delete/${bike.id}`, {
+        fetch(`${APIURL}/bikes/delete/${bike.id}`, {
             method: 'DELETE',
             body: JSON.stringify({ bike: bike }),
             headers: new Headers({

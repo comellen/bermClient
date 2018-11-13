@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './RideCreate.css';
+import APIURL from '../helpers/environment';
 
 export default class RideCreate extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ export default class RideCreate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3033/rides/create', {
+        fetch(`${APIURL}/rides/create`, {
             method: 'POST',
             body: JSON.stringify({ ride: this.state }),
             headers: new Headers({

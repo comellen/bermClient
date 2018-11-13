@@ -3,6 +3,7 @@ import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import RideCreate from './RideCreate';
 import RideTable from './RideTable';
 import RideEdit from './RideEdit';
+import APIURL from '../helpers/environment';
 
 export default class RideIndex extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class RideIndex extends Component {
     }
 
     fetchRides = () => {
-        fetch('http://localhost:3033/rides/getall', {
+        fetch(`${APIURL}/rides/getall`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ export default class RideIndex extends Component {
     }
 
     rideUpdate = (event, ride) => {
-        fetch(`http:localhost:3033/rides/update/${ride.id}`, {
+        fetch(`${APIURL}/rides/update/${ride.id}`, {
             method: 'PUT',
             body: JSON.stringify({ ride: ride }),
             headers: new Headers({
@@ -64,7 +65,7 @@ export default class RideIndex extends Component {
     }
 
     rideDelete = (event, ride) => {
-        fetch(`http:localhost:3033/rides/delete/${ride.id}`, {
+        fetch(`${APIURL}/rides/delete/${ride.id}`, {
             method: 'DELETE',
             body: JSON.stringify({ ride: ride }),
             headers: new Headers({

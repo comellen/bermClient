@@ -3,6 +3,7 @@ import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import TrailCreate from './TrailCreate';
 import TrailTable from './TrailTable';
 import TrailEdit from './TrailEdit';
+import APIURL from '../helpers/environment';
 
 export default class TrailIndex extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class TrailIndex extends Component {
     }
 
     fetchTrails = () => {
-        fetch('http://localhost:3033/trails/getall', {
+        fetch(`${APIURL}/trails/getall`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ export default class TrailIndex extends Component {
     }
 
     trailUpdate = (event, trail) => {
-        fetch(`http:localhost:3033/trails/update/${trail.id}`, {
+        fetch(`${APIURL}/trails/update/${trail.id}`, {
             method: 'PUT',
             body: JSON.stringify({ trail: trail }),
             headers: new Headers({
@@ -64,7 +65,7 @@ export default class TrailIndex extends Component {
     }
 
     trailDelete = (event, trail) => {
-        fetch(`http:localhost:3033/trails/delete/${trail.id}`, {
+        fetch(`${APIURL}/trails/delete/${trail.id}`, {
             method: 'DELETE',
             body: JSON.stringify({ trail: trail }),
             headers: new Headers({

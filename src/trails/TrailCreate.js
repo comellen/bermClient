@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './TrailCreate.css'
+import APIURL from '../helpers/environment';
 
 export default class TrailCreate extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ export default class TrailCreate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3033/trails/create', {
+        fetch(`${APIURL}/trails/create`, {
             method: 'POST',
             body: JSON.stringify({ trail: this.state }),
             headers: new Headers({

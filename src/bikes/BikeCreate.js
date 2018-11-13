@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './BikeCreate.css';
+import APIURL from '../helpers/environment';
 
 export default class BikeCreate extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class BikeCreate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3033/bikes/create', {
+        fetch(`${APIURL}/bikes/create`, {
             method: 'POST',
             body: JSON.stringify({ bike: this.state }),
             headers: new Headers({

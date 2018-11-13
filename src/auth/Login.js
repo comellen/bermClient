@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import '../App.css';
+import APIURL from '../helpers/environment';
 
 export default class Login extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ export default class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3033/user/login', {
+        fetch(`${APIURL}/user/login`, {
             method: 'POST',
             body: JSON.stringify({ user: this.state }),
             headers: new Headers({
