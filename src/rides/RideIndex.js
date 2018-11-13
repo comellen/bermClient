@@ -73,11 +73,11 @@ export default class RideIndex extends Component {
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
-                    <RideTable rides={this.state.rides} />
-                {this.state.updatePressed ?
-                <RideEdit t={this.state.updatePressed} update={this.rideUpdate} workout={this.state.rideToUpdate} /> :
-                <div></div>}
                 </Modal>
+                <RideTable rides={this.state.rides} />
+                {this.state.updatePressed ?
+                    <RideEdit t={this.state.updatePressed} update={this.rideUpdate} workout={this.state.rideToUpdate} /> :
+                    <div></div>}
             </div>
         );
     }
