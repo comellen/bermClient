@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Container, Col, Modal, ModalBody, ModalHeader, ModalFooter, Row } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import TrailCreate from './TrailCreate';
 import TrailTable from './TrailTable';
+import TrailEdit from './TrailEdit';
 
 
 export default class TrailIndex extends Component {
@@ -9,7 +10,9 @@ export default class TrailIndex extends Component {
         super(props);
         this.state = {
             trails: [],
-            modal: false
+            modal: false,
+            updatePressed: false,
+            trailToUpdate: {}
         };
 
         this.toggle = this.toggle.bind(this);
@@ -21,7 +24,7 @@ export default class TrailIndex extends Component {
         });
     }
 
-    componentDidMount() {  //changed from WillMount
+    componentWillMount() {  //changed from WillMount
         this.fetchTrails();
     }
 
@@ -39,6 +42,28 @@ export default class TrailIndex extends Component {
             });
     }
 
+    trailUpdate = (event, trail) => {
+        fetch(`http:localhost:3033/trails/update/${trail.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ trail: trail }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.sessionToken
+            })
+        })
+            .then((res) => {
+                this.setState({ updatePressed: false });
+                this.fetchTrails();
+            });
+    }
+
+    setUpdatedTrail = (event, trail) => {
+        this.setState({
+            trailToUpdate: trail,
+            updatePressed: true
+        });
+    }
+
     render() {
         return (
             <div>
@@ -53,6 +78,9 @@ export default class TrailIndex extends Component {
                     </ModalFooter>
                 </Modal>
                 <TrailTable trails={this.state.trails} />
+                {this.state.updatePressed ?
+                <TrailEdit t={this.state.updatePressed} update={this.trailUpdate} workout={this.state.trailToUpdate} /> :
+                <div></div>}
             </div>
         );
     }

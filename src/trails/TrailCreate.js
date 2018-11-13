@@ -22,18 +22,17 @@ export default class TrailCreate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.props.token)
         fetch('http://localhost:3033/trails/create', {
             method: 'POST',
             body: JSON.stringify({ trail: this.state }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.token
+                'Authorization': this.props.sessionToken
             })
         })
             .then((res) => res.json())
             .then((newTrail) => {
-                // this.props.updateTrailsArray();
+                this.props.updateTrailsArray();
             });
     }
 

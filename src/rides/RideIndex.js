@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Container, Col, Modal, ModalBody, ModalHeader, ModalFooter, Row } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import RideCreate from './RideCreate';
+import RideTable from './RideTable';
+import RideEdit from './RideEdit';
 
 export default class RideIndex extends Component {
     constructor(props) {
@@ -37,6 +39,28 @@ export default class RideIndex extends Component {
             });
     }
 
+    rideUpdate = (event, ride) => {
+        fetch(`http:localhost:3033/rides/update/${ride.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ ride: ride }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.sessionToken
+            })
+        })
+            .then((res) => {
+                this.setState({ updatePressed: false });
+                this.fetchRides();
+            });
+    }
+
+    setUpdatedRide = (event, ride) => {
+        this.setState({
+            rideToUpdate: ride,
+            updatePressed: true
+        });
+    }
+
     render() {
         return (
             <div>
@@ -49,6 +73,10 @@ export default class RideIndex extends Component {
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
+                    <RideTable rides={this.state.rides} />
+                {this.state.updatePressed ?
+                <RideEdit t={this.state.updatePressed} update={this.rideUpdate} workout={this.state.rideToUpdate} /> :
+                <div></div>}
                 </Modal>
             </div>
         );

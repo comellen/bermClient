@@ -14,12 +14,12 @@ export default class App extends Component {
     this.setToken = (token) => {
       localStorage.setItem('token', token);
       this.setState({ sessionToken: token });
-    }
+    };
 
     this.state = {
       sessionToken: '',
       setToken: this.setToken
-    }
+    };
   }
 
   componentWillMount() {
