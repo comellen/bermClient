@@ -35,7 +35,7 @@ export default class BikeCreate extends Component {
             body: JSON.stringify({ bike: this.state }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.token
+                'Authorization': this.props.sessionToken
             })
         })
             .then((res) => res.json())

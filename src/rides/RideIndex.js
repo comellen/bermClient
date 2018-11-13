@@ -28,7 +28,7 @@ export default class RideIndex extends Component {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.token
+                'Authorization': this.props.sessionToken
             })
         })
             .then((res) => res.json())
@@ -44,7 +44,7 @@ export default class RideIndex extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Ride</ModalHeader>
                     <ModalBody>
-                        <RideCreate token={this.props.token} />
+                        <RideCreate sessionToken={this.props.sessionToken} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>

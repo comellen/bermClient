@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Auth from './auth/Auth';
 import Navigation from './home/Navigation';
 import Home from './home/Home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import BikeIndex from './bikes/BikeIndex';
+import RideIndex from './rides/RideIndex';
+import TrailIndex from './trails/TrailIndex';
 
 export default class App extends Component {
   constructor() {
@@ -42,10 +45,28 @@ export default class App extends Component {
     if (this.state.sessionToken === localStorage.getItem('token')) {
       return (
         <Switch>
-          <Route path="/" exact>
+          <Route exact path="/">
             <div>
               <Navigation clickLogout={this.logout} />
               <Home sessionToken={this.state.sessionToken} />
+            </div>
+          </Route>
+          <Route path="/rides">
+            <div>
+              <Navigation clickLogout={this.logout} />
+              <RideIndex sessionToken={this.state.sessionToken} />
+            </div>
+          </Route>
+          <Route path="/trails">
+            <div>
+              <Navigation clickLogout={this.logout} />
+              <TrailIndex sessionToken={this.state.sessionToken} />
+            </div>
+          </Route>
+          <Route path="/bikes">
+            <div>
+              <Navigation clickLogout={this.logout} />
+              <BikeIndex sessionToken={this.state.sessionToken} />
             </div>
           </Route>
         </Switch>
@@ -62,11 +83,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          {this.protectedViews()}
-        </div>
-      </Router>
+      <div>
+        <Router>
+          <div>
+            {this.protectedViews()}
+          </div>
+        </Router>
+
+      </div>
     );
   }
 }

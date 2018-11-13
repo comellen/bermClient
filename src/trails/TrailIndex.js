@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Container, Col, Modal, ModalBody, ModalHeader, ModalFooter, Row } from 'reactstrap';
 import TrailCreate from './TrailCreate';
+import TrailTable from './TrailTable';
+
 
 export default class TrailIndex extends Component {
     constructor(props) {
@@ -28,7 +30,7 @@ export default class TrailIndex extends Component {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.token
+                'Authorization': this.props.sessionToken
             })
         })
             .then((res) => res.json())
@@ -44,12 +46,13 @@ export default class TrailIndex extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Trail</ModalHeader>
                     <ModalBody>
-                        <TrailCreate token={this.props.token} />
+                        <TrailCreate sessionToken={this.props.sessionToken} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
+                <TrailTable trails={this.state.trails} />
             </div>
         );
     }

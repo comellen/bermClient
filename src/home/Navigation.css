@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css?family=Exo+2');
+}
+
+.logo {
+    font-family: 'Exo 2', sans-serif;
+    color: #272722 !important;
+}
+
+.navLink {
+    color: #666a6f;
+    margin-top: 1em;
+    margin-right: 4em;
+}
+.navLink:click {
+    text-decoration: none;
+    color: #272722;
+}
