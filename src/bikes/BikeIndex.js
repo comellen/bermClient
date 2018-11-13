@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { Button, Container, Col, Modal, ModalBody, ModalHeader, ModalFooter, Row } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import BikeCreate from './BikeCreate';
+import BikeCards from './BikeCards';
+import BikeEdit from './BikeEdit';
 
 export default class BikeIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {
             bikes: [],
-            modal: false
+            modal: false,
+            updatePressed: false,
+            bikeToUpdate: {},
         };
 
         this.toggle = this.toggle.bind(this);
@@ -19,7 +23,7 @@ export default class BikeIndex extends Component {
         });
     }
 
-    componentDidMount() {  //changed from WillMount
+    componentWillMount() {
         this.fetchBikes();
     }
 
@@ -37,12 +41,47 @@ export default class BikeIndex extends Component {
             });
     }
 
+    bikeUpdate = (event, bike) => {
+        fetch(`http:localhost:3033/bikes/update/${bike.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ bike: bike }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.sessionToken
+            })
+        })
+            .then((res) => {
+                this.setState({ updatePressed: false });
+                this.fetchBikes();
+            });
+    }
+
+    setUpdatedBike = (event, bike) => {
+        this.setState({
+            bikeToUpdate: bike,
+            updatePressed: true
+        });
+    }
+
+    bikeDelete = (event, bike) => {
+        fetch(`http:localhost:3033/bikes/delete/${bike.id}`, {
+            method: 'DELETE',
+            body: JSON.stringify({ bike: bike }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.sessionToken
+            })
+        })
+            .then(res => this.fetchBikes());
+    }
     render() {
         return (
             <div>
                 <Button color="submit" onClick={this.toggle}>Add a bike</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>
+                        Add Bike
+                    </ModalHeader>
                     <ModalBody>
                         <BikeCreate sessionToken={this.props.sessionToken} />
                     </ModalBody>
@@ -50,6 +89,16 @@ export default class BikeIndex extends Component {
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
+                {/* <BikeCards bikes={this.state.bikes} /> */}
+
+                {
+                    this.state.updatePressed ?
+                        <BikeEdit
+                            t={this.state.updatePressed}
+                            update={this.bikeUpdate}
+                            bike={this.state.bikeToUpdate} /> :
+                        <div></div>
+                }
             </div>
         );
     }

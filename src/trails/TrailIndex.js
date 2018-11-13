@@ -4,7 +4,6 @@ import TrailCreate from './TrailCreate';
 import TrailTable from './TrailTable';
 import TrailEdit from './TrailEdit';
 
-
 export default class TrailIndex extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +11,7 @@ export default class TrailIndex extends Component {
             trails: [],
             modal: false,
             updatePressed: false,
-            trailToUpdate: {}
+            trailToUpdate: {},
         };
 
         this.toggle = this.toggle.bind(this);
@@ -24,7 +23,7 @@ export default class TrailIndex extends Component {
         });
     }
 
-    componentWillMount() {  //changed from WillMount
+    componentWillMount() {
         this.fetchTrails();
     }
 
@@ -64,23 +63,44 @@ export default class TrailIndex extends Component {
         });
     }
 
+    trailDelete = (event, trail) => {
+        fetch(`http:localhost:3033/trails/delete/${trail.id}`, {
+            method: 'DELETE',
+            body: JSON.stringify({ trail: trail }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.sessionToken
+            })
+        })
+            .then(res => this.fetchTrails());
+    }
+
     render() {
         return (
             <div>
                 <Button color="submit" onClick={this.toggle}>Add a trail</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>Add Trail</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>
+                        Add Trail
+                    </ModalHeader>
                     <ModalBody>
-                        <TrailCreate sessionToken={this.props.sessionToken} />
+                        <TrailCreate sessionToken={this.props.sessionToken} fetchTrails={this.fetchTrails} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
+
                 <TrailTable trails={this.state.trails} />
-                {this.state.updatePressed ?
-                <TrailEdit t={this.state.updatePressed} update={this.trailUpdate} workout={this.state.trailToUpdate} /> :
-                <div></div>}
+
+                {
+                    this.state.updatePressed ?
+                        <TrailEdit
+                            t={this.state.updatePressed}
+                            update={this.trailUpdate}
+                            trail={this.state.trailToUpdate} /> :
+                        <div></div>
+                }
             </div>
         );
     }

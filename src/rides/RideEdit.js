@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 export default class RideEdit extends Component {
     constructor(props) {
@@ -13,6 +13,7 @@ export default class RideEdit extends Component {
             date: ''
         };
     }
+    
     componentWillMount() {
         this.setState({
             id: this.props.ride.id,
@@ -39,8 +40,8 @@ export default class RideEdit extends Component {
     render() {
         return (
             <div>
-                <Modal isOpen={true}> {/* removed state.modal*/}
-                    <ModalHeader>Edit Ride</ModalHeader>  {/*removed toggle*/}
+                <Modal isOpen={true}>
+                    <ModalHeader>Edit Ride</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup>
@@ -64,21 +65,18 @@ export default class RideEdit extends Component {
                                 <Input id="time" type="text" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" placeholder="hh:mm:ss" name="time" value={this.state.time} onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="date">Date</Label>
-                                <br />
-                                <Input id="date" type="text" name="date" value={this.state.date} placeholder="YYYY/MM/DD" onChange={this.handleChange} />
-                            </FormGroup>
-                            <FormGroup>
                                 <Label for="notes">Notes</Label>
                                 <br />
                                 <textarea rows="3" cols="30" id="notes" type="text" name="notes" value={this.state.notes} onChange={this.handleChange} />
                             </FormGroup>
+                            <FormGroup>
+                                <Label for="date">Date</Label>
+                                <br />
+                                <Input id="date" type="text" name="date" value={this.state.date} placeholder="YYYY/MM/DD" onChange={this.handleChange} />
+                            </FormGroup>
                             <Button type="submit" color="primary">Submit</Button>
                         </Form>
                     </ModalBody>
-                    <ModalFooter>
-                        <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter>
                 </Modal>
             </div>
         );

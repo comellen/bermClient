@@ -31,7 +31,6 @@ export default class RideCreate extends Component {
         })
             .then((res) => res.json())
             .then((newRide) => {
-                this.props.updateRidesArray();
                 this.setState({
                     trail: '',
                     location: '',
@@ -39,7 +38,6 @@ export default class RideCreate extends Component {
                     time: '',
                     notes: '',
                     date: '',
-                    // owner: localStorage.getItem('owner')
                 });
             });
     }

@@ -9,6 +9,7 @@ const RideTable = (props) => {
             <Table striped>
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Trail</th>
                         <th>Location</th>
                         <th>Bike</th>
@@ -30,8 +31,9 @@ const RideTable = (props) => {
                                 <td>{ride.notes}</td>
                                 <td>{ride.date}</td>
                                 <td>
+                                    <Button id={ride.id} onClick={e => props.update(e, ride)} color="primary">Update</Button>
+
                                     <Button id={ride.id} onClick={props.delete} color="danger">Delete</Button>
-                                    <Button id={ride.id} onClick={e => props.update(e, ride)} color="warning">Update</Button>
                                 </td>
                             </tr>
                         );

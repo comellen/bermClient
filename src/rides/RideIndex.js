@@ -9,7 +9,9 @@ export default class RideIndex extends Component {
         super(props);
         this.state = {
             rides: [],
-            modal: false
+            modal: false,
+            updatePressed: false,
+            rideToUpdate: {},
         };
 
         this.toggle = this.toggle.bind(this);
@@ -21,7 +23,7 @@ export default class RideIndex extends Component {
         });
     }
 
-    componentDidMount() {  //changed from WillMount
+    componentWillMount() {
         this.fetchRides();
     }
 
@@ -61,23 +63,44 @@ export default class RideIndex extends Component {
         });
     }
 
+    rideDelete = (event, ride) => {
+        fetch(`http:localhost:3033/rides/delete/${ride.id}`, {
+            method: 'DELETE',
+            body: JSON.stringify({ ride: ride }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.sessionToken
+            })
+        })
+            .then(res => this.fetchRides());
+    }
+
     render() {
         return (
             <div>
-                <Button color="submit" onClick={this.toggle}>Add a ride</Button>
+                <Button color="success" onClick={this.toggle}>Add a ride</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>Add Ride</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>
+                        Add Ride
+                    </ModalHeader>
                     <ModalBody>
-                        <RideCreate sessionToken={this.props.sessionToken} />
+                        <RideCreate sessionToken={this.props.sessionToken} fetchRides={this.fetchRides} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
+
                 <RideTable rides={this.state.rides} />
-                {this.state.updatePressed ?
-                    <RideEdit t={this.state.updatePressed} update={this.rideUpdate} workout={this.state.rideToUpdate} /> :
-                    <div></div>}
+
+                {
+                    this.state.updatePressed ?
+                        <RideEdit
+                            t={this.state.updatePressed}
+                            update={this.rideUpdate}
+                            ride={this.state.rideToUpdate} /> :
+                        <div></div>
+                }
             </div>
         );
     }
