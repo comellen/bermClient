@@ -1,4 +1,4 @@
-const APIURL = '';
+let APIURL = '';
 
 switch (window.location.hostname) {
    // this is the local host name of your react app
