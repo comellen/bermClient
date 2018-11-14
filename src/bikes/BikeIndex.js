@@ -76,15 +76,15 @@ export default class BikeIndex extends Component {
             .then(res => this.fetchBikes());
     }
     render() {
-        // const bikes = this.state.bikes.length >= 1 ?
-        // <BikeCards 
-        //         bikes={this.state.bikes}
-        //         update={this.bikeUpdate}
-        //         delete={this.bikeDelete} /> :
-        //         <h2>Add bikes here.</h2>
+        const bikes = this.state.bikes.length >= 1 ?
+        <BikeCards 
+                bikes={this.state.bikes}
+                update={this.bikeUpdate}
+                delete={this.bikeDelete} /> :
+                <h2>Add bikes here.</h2>
 
         return (
-            <div>
+            <div className="bikeCards">
                 <Button className="addButton" color="submit" onClick={this.toggle}>Add a bike</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
@@ -96,7 +96,7 @@ export default class BikeIndex extends Component {
                     </ModalFooter>
                 </Modal>
 
-                {/* {bikes} */}
+                {bikes}
 
                 {
                     this.state.updatePressed ?
