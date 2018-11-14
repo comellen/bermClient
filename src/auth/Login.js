@@ -33,15 +33,15 @@ export default class Login extends Component {
     render() {
       return (
         <div>
-            <h1 className="authH">LOGIN</h1>
+            <h1 className="authH">Login</h1>
             <Form className="login" onSubmit={this.handleSubmit}>
                 <FormGroup className="authInputs">
-                    <Label for="email">EMAIL</Label>
+                    <Label for="email">email</Label>
                     <br />
                     <Input id="loginEmail" type="email" name="email" placeholder="you@email.com" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup className="authInputs">
-                    <Label for="password">PASSWORD</Label>
+                    <Label for="password">password</Label>
                     <br />
                     <Input id="loginPass" type="password" name="password" placeholder="*********" onChange={this.handleChange} />
                 </FormGroup>

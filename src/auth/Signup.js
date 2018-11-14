@@ -36,15 +36,15 @@ export default class Signup extends Component {
     render() {
         return (
             <div>
-                <h1 className="authH">SIGN UP</h1>
+                <h1 className="authH">Sign up</h1>
                 <Form className="signup" onSubmit={this.handleSubmit}>
                     <FormGroup className="authInputs">
-                        <Label for="email">EMAIL</Label>
+                        <Label for="email">email</Label>
                         <br />
                         <Input id="signupEmail" type="email" name="email" placeholder="you@email.com" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup className="authInputs">
-                        <Label for="password">PASSWORD</Label>
+                        <Label for="password">password</Label>
                         <br />
                         <Input id="signupPassword" type="password" name="password" placeholder="*********" onChange={this.handleChange} />
                     </FormGroup>

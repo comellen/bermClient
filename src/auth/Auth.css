@@ -1,16 +1,6 @@
 .authWrapper {
-    display: inline-flex;
-    flex-direction:row;
     margin-top: 2em;
-    margin-bottom: 5em;
-}
-
-.bermInfo {
-    max-width: 400px;
-    min-width: 280px;
-    margin-right: 2em;
     margin-bottom: 2em;
-    margin-left: 2em;
 }
 
 .authContainer {
@@ -22,6 +12,7 @@
     box-shadow: 0px 8px 18px #c4c4c4;
     text-align: center;
     color: #272722;
+    margin-top: 2em;
     margin-right: auto;
     margin-left: auto;
 }
