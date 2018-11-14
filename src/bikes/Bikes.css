@@ -14,6 +14,34 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.addButton {
-    margin-bottom: 2em;
+.bikeCards {
+    padding: 1em;
+}
+
+.cardContainer {
+    justify-content: center;
+}
+
+.bikeCard {
+    width: 333px;
+    height: 600px;
+    float: left;
+    margin: auto;
+}
+
+.cardTitle {
+    padding-bottom: 1em;
+}
+
+.cardUpdate {
+    float: left;
+    bottom: 0;
+    margin: 2em 1em 0 1em;
+    width: 88px;
+}
+
+.cardDelete {
+    float: right;
+    margin: 2em 1em 0 1em;
+    width: 88px;
 }

@@ -3,13 +3,13 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } fr
 
 const BikeCards = (props) => {
     return (
-        <div>
+        <div className="cardContainer">
             {props.bikes.map((bike, id) => {
                 return (
-                    <Card>
+                    <Card className="bikeCard">
                         <CardImg src="/" />
                         <CardBody>
-                            <CardTitle>{bike.year} {bike.brand} {bike.model}</CardTitle>
+                            <CardTitle className="cardTitle">{bike.year} {bike.brand} {bike.model}</CardTitle>
                             <ul>
                                 <li>Frame: {bike.frame}</li>
                                 <li>Suspension: {bike.suspension}</li>
@@ -24,9 +24,11 @@ const BikeCards = (props) => {
                                 <li>Additional Components: {bike.additionalComponents}</li>
                                 <li>Planned Upgrades: {bike.plannedUpgrades}</li>
                             </ul>
-                            <Button className="tableButtons" id={bike.id} onClick={e => props.update(e, bike)} color="info">Update</Button>
+                            <div className="cardButtons">
+                            <Button className="cardUpdate" id={bike.id} onClick={e => props.update(e, bike)} color="info">Update</Button>
 
-                            <Button className="tableButtons" id={bike.id} onClick={e => props.delete(e, bike)} color="danger">Delete</Button>
+                            <Button className="cardDelete" id={bike.id} onClick={e => props.delete(e, bike)} color="danger">Delete</Button>
+                            </div>
                         </CardBody>
                     </Card>
                 );

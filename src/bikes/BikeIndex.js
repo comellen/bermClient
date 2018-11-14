@@ -85,7 +85,7 @@ export default class BikeIndex extends Component {
 
         return (
             <div className="bikeCards">
-                <Button className="addButton" color="submit" onClick={this.toggle}>Add a bike</Button>
+                <Button className="addButtonBike" color="success" onClick={this.toggle}>Add a bike</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
                     <ModalBody>
