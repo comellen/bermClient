@@ -152,7 +152,7 @@ export default class BikeCreate extends Component {
                         <br />
                         <textarea rows="3" cols="30" id="plannedUpgrades" type="text" name="plannedUpgrades" value={this.state.plannedUpgrades} onChange={this.handleChange} />
                     </FormGroup>
-                    <Button type="submit" color="primary" onClick={this.props.fetchBikes}>Submit</Button>
+                    <Button type="submit" color="primary" onClick={e => {this.props.fetchBikes(); this.props.toggle()}}>Submit</Button>
                 </Form>
             </div>
         );

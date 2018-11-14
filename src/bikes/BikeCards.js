@@ -7,7 +7,7 @@ const BikeCards = (props) => {
         <div className="cardContainer">
             {props.bikes.map((bike, id) => {
                 return (
-                    <Card className="bikeCard">
+                    <Card className="bikeCard" key={bike.id}>
                     <div className="bikeIconContainer">
                         <img className="bikeIcon" src={bikeicon} />
                         </div>
@@ -28,7 +28,7 @@ const BikeCards = (props) => {
                                 <li>Planned Upgrades: {bike.plannedUpgrades}</li>
                             </ul>
                             <div className="cardButtons">
-                            <Button className="cardUpdate" id={bike.id} onClick={e => props.update(e, bike)} color="info">Update</Button>
+                            <Button className="cardUpdate" id={bike.id} onClick={e => {props.setUpdatedBike(e, bike); props.toggleUpdate()}} color="info">Update</Button>
 
                             <Button className="cardDelete" id={bike.id} onClick={e => props.delete(e, bike)} color="danger">Delete</Button>
                             </div>

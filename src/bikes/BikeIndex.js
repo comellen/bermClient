@@ -24,7 +24,16 @@ export default class BikeIndex extends Component {
         });
     }
 
+    toggleUpdate = () => {
+        this.setState({
+            updatePressed: !this.state.updatePressed
+        });
+    }
+
     componentWillMount() {
+        this.setState({
+            updatePressed: false
+        });
         this.fetchBikes();
     }
 
@@ -77,11 +86,14 @@ export default class BikeIndex extends Component {
     }
     render() {
         const bikes = this.state.bikes.length >= 1 ?
-        <BikeCards 
+            <BikeCards
+                setUpdatedBike={this.setUpdatedBike}
+                pressed={this.state.updatePressed}
+                toggleUpdate={this.toggleUpdate}
                 bikes={this.state.bikes}
                 update={this.bikeUpdate}
                 delete={this.bikeDelete} /> :
-                <h2>☝️ Add bikes here.</h2>
+            <h2>☝️ Add bikes here.</h2>
 
         return (
             <div className="bikeCards">
@@ -89,7 +101,7 @@ export default class BikeIndex extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
                     <ModalBody>
-                        <BikeCreate sessionToken={this.props.sessionToken} fetchBikes={this.fetchBikes} />
+                        <BikeCreate sessionToken={this.props.sessionToken} fetchBikes={this.fetchBikes} toggle={this.toggle} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
@@ -100,11 +112,17 @@ export default class BikeIndex extends Component {
 
                 {
                     this.state.updatePressed ?
-                        <BikeEdit
-                            pressed={this.state.updatePressed}
-                            update={this.bikeUpdate}
-                            bike={this.state.bikeToUpdate} /> :
+                        <Modal isOpen={true}>
+                            <ModalHeader>Edit Bike</ModalHeader>
+                            <ModalBody>
+                                <BikeEdit
+                                    toggleUpdate={this.toggleUpdate}
+                                    update={this.bikeUpdate}
+                                    bike={this.state.bikeToUpdate} />
+                            </ModalBody>
+                        </Modal> :
                         <div></div>
+
                 }
             </div>
         );

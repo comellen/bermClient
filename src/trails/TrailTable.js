@@ -22,7 +22,6 @@ const TrailTable = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {console.log(props.trails)}
                     {props.trails.map((trail, id) => {
                         return (
                             <tr key={id}>

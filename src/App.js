@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Auth from './auth/Auth';
 import Navigation from './home/Navigation';
-import Footer from './home/Footer';
 import Home from './home/Home';
 import BikeIndex from './bikes/BikeIndex';
 import RideIndex from './rides/RideIndex';
@@ -61,7 +60,6 @@ export default class App extends Component {
               <BikeIndex sessionToken={this.state.sessionToken} />
             </Route>
           </Switch>
-          <Footer />
         </div>
       );
     } else {

@@ -24,7 +24,16 @@ export default class RideIndex extends Component {
         });
     }
 
+    toggleUpdate = () => {
+        this.setState({
+            updatePressed: !this.state.updatePressed
+        });
+    }
+
     componentWillMount() {
+        this.setState({
+            updatePressed: false,
+        });
         this.fetchRides();
     }
 
@@ -78,11 +87,14 @@ export default class RideIndex extends Component {
 
     render() {
         const rides = this.state.rides.length >= 1 ?
-        <RideTable 
+            <RideTable
+                setUpdatedRide={this.setUpdatedRide}
+                pressed={this.state.updatePressed}
+                toggleUpdate={this.toggleUpdate}
                 rides={this.state.rides}
                 update={this.rideUpdate}
                 delete={this.rideDelete} /> :
-                <h2>☝️ Log your first ride here.</h2>
+            <h2>☝️ Log your first ride here.</h2>
 
         return (
             <div className="rideTable">
@@ -101,10 +113,15 @@ export default class RideIndex extends Component {
 
                 {
                     this.state.updatePressed ?
-                        <RideEdit
-                            pressed={this.state.updatePressed}
-                            update={this.rideUpdate}
-                            ride={this.state.rideToUpdate} /> :
+                        <Modal isOpen={true}>
+                            <ModalHeader>Edit Ride</ModalHeader>
+                            <ModalBody>
+                                <RideEdit
+                                    toggleUpdate={this.toggleUpdate}
+                                    update={this.rideUpdate}
+                                    ride={this.state.rideToUpdate} />
+                            </ModalBody>
+                        </Modal> :
                         <div></div>
                 }
             </div>
