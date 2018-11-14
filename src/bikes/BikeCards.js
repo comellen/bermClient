@@ -9,7 +9,7 @@ const BikeCards = (props) => {
                 return (
                     <Card className="bikeCard" key={bike.id}>
                     <div className="bikeIconContainer">
-                        <img className="bikeIcon" src={bikeicon} />
+                        <img className="bikeIcon" src={bikeicon} alt="bike icon" />
                         </div>
                         <CardBody>
                             <CardTitle className="cardTitle">{bike.year} {bike.brand} {bike.model}</CardTitle>

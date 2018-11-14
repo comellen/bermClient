@@ -24,7 +24,7 @@ const RideTable = (props) => {
                     {props.rides.map((ride, id) => {
                         return (
                             <tr key={id}>
-                            <img className="rideIcon" src={rideicon} />
+                            <img className="rideIcon" src={rideicon} alt="ride icon" />
                                 <th scope="row">{ride.id}</th>
                                 <td>{ride.trail}</td>
                                 <td>{ride.location}</td>
