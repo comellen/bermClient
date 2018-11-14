@@ -4,7 +4,7 @@ import trailicon from '../assets/trailicon.png';
 
 const TrailTable = (props) => {
     return (
-        <div>
+        <div className="trailTable">
             <h3>Trails</h3>
             <hr />
             <Table striped>

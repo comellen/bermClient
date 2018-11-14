@@ -97,7 +97,7 @@ export default class RideIndex extends Component {
             <h2>☝️ Log your first ride here.</h2>
 
         return (
-            <div className="rideTable">
+            <div className="ridePage">
                 <Button className="addButton" color="success" onClick={this.toggle}>Add a ride</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Ride</ModalHeader>

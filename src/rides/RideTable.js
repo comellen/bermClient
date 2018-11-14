@@ -4,7 +4,7 @@ import rideicon from '../assets/rideicon.png';
 
 const RideTable = (props) => {
     return (
-        <div>
+        <div className="rideTable">
             <h3>Rides</h3>
             <hr />
             <Table striped>

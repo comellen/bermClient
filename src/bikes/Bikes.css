@@ -27,6 +27,8 @@
     height: 600px;
     float: left;
     margin: auto;
+    border: none !important;
+    box-shadow: 0px 8px 18px #c4c4c4;
 }
 
 .bikeIconContainer {
