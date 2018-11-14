@@ -39,9 +39,8 @@ export default class BikeCreate extends Component {
                 'Authorization': this.props.sessionToken
             })
         })
-            .then((res) => res.json())
+            .then((res) => console.log(res))
             .then((newBike) => {
-                this.props.updateBikesArray();
                 this.setState({
                     brand: '',
                     model: '',

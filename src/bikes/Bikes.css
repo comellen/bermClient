@@ -29,19 +29,33 @@
     margin: auto;
 }
 
+.bikeIconContainer {
+    text-align: center;
+}
+
+.bikeIcon {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
 .cardTitle {
     padding-bottom: 1em;
 }
 
-.cardUpdate {
-    float: left;
+.cardButtons {
+    position: absolute;
+    right: 0;
     bottom: 0;
-    margin: 2em 1em 0 1em;
+    padding: 0 1em 1em 0;
+    justify-content: center;
+    float: right;
+}
+
+.cardUpdate {
+    margin-right: 1em;
     width: 88px;
 }
 
 .cardDelete {
-    float: right;
-    margin: 2em 1em 0 1em;
     width: 88px;
 }

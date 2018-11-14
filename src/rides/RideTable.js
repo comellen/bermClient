@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
+import rideicon from '../assets/rideicon.png';
 
 const RideTable = (props) => {
     return (
@@ -23,6 +24,7 @@ const RideTable = (props) => {
                     {props.rides.map((ride, id) => {
                         return (
                             <tr key={id}>
+                            <img className="rideIcon" src={rideicon} />
                                 <th scope="row">{ride.id}</th>
                                 <td>{ride.trail}</td>
                                 <td>{ride.location}</td>

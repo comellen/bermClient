@@ -81,11 +81,11 @@ export default class BikeIndex extends Component {
                 bikes={this.state.bikes}
                 update={this.bikeUpdate}
                 delete={this.bikeDelete} /> :
-                <h2>Add bikes here.</h2>
+                <h2>☝️ Add bikes here.</h2>
 
         return (
             <div className="bikeCards">
-                <Button className="addButtonBike" color="success" onClick={this.toggle}>Add a bike</Button>
+                <Button className="addButton" color="success" onClick={this.toggle}>Add a bike</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>
                     <ModalBody>

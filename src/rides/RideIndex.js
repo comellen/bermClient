@@ -82,7 +82,7 @@ export default class RideIndex extends Component {
                 rides={this.state.rides}
                 update={this.rideUpdate}
                 delete={this.rideDelete} /> :
-                <h2>Log your first ride here.</h2>
+                <h2>☝️ Log your first ride here.</h2>
 
         return (
             <div className="rideTable">

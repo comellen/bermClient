@@ -82,7 +82,7 @@ export default class TrailIndex extends Component {
                 trails={this.state.trails}
                 update={this.trailUpdate}
                 delete={this.trailDelete} /> :
-                <h2>Enter a trail for your list.</h2>
+                <h2>☝️ Enter a trail for your list.</h2>
 
         return (
             <div className="trailTable">

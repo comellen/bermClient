@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
+import trailicon from '../assets/trailicon.png';
 
 const TrailTable = (props) => {
     return (
@@ -9,6 +10,7 @@ const TrailTable = (props) => {
             <Table striped>
                 <thead>
                     <tr>
+                        <th></th>
                         <th>#</th>
                         <th>Name</th>
                         <th>Location</th>
@@ -24,6 +26,7 @@ const TrailTable = (props) => {
                     {props.trails.map((trail, id) => {
                         return (
                             <tr key={id}>
+                            <img className="trailIcon" src={trailicon} />
                                 <th scope="row">{trail.id}</th>
                                 <td>{trail.name}</td>
                                 <td>{trail.location}</td>

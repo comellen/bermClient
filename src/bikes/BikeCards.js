@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import bikeicon from '../assets/bikeicon.png';
 
 const BikeCards = (props) => {
     return (
@@ -7,7 +8,9 @@ const BikeCards = (props) => {
             {props.bikes.map((bike, id) => {
                 return (
                     <Card className="bikeCard">
-                        <CardImg src="/" />
+                    <div className="bikeIconContainer">
+                        <img className="bikeIcon" src={bikeicon} />
+                        </div>
                         <CardBody>
                             <CardTitle className="cardTitle">{bike.year} {bike.brand} {bike.model}</CardTitle>
                             <ul>
