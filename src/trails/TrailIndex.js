@@ -12,7 +12,7 @@ export default class TrailIndex extends Component {
             trails: [],
             modal: false,
             updatePressed: false,
-            trailToUpdate: {},
+            trailToUpdate: {}
         };
 
         this.toggle = this.toggle.bind(this);
@@ -24,7 +24,16 @@ export default class TrailIndex extends Component {
         });
     }
 
+    toggleUpdate = () => {
+        this.setState({
+            updatePressed: !this.state.updatePressed
+        });
+    }
+
     componentWillMount() {
+        this.setState({
+            updatePressed: false
+        });
         this.fetchTrails();
     }
 
@@ -78,11 +87,14 @@ export default class TrailIndex extends Component {
 
     render() {
         const trails = this.state.trails.length >= 1 ?
-        <TrailTable 
+            <TrailTable
+                setUpdatedTrail={this.setUpdatedTrail}
+                pressed={this.state.updatePressed}
+                toggleUpdate={this.toggleUpdate}
                 trails={this.state.trails}
                 update={this.trailUpdate}
                 delete={this.trailDelete} /> :
-                <h2>☝️ Enter a trail for your list.</h2>
+            <h2>☝️ Enter a trail for your list.</h2>
 
         return (
             <div className="trailTable">
@@ -101,10 +113,15 @@ export default class TrailIndex extends Component {
 
                 {
                     this.state.updatePressed ?
-                        <TrailEdit
-                            pressed={this.state.updatePressed}
-                            update={this.trailUpdate}
-                            trail={this.state.trailToUpdate} /> :
+                        <Modal isOpen={true}>
+                            <ModalHeader>Edit Trail</ModalHeader>
+                            <ModalBody>
+                                <TrailEdit
+                                    pressed={this.state.updatePressed}
+                                    update={this.trailUpdate}
+                                    trail={this.state.trailToUpdate} />
+                            </ModalBody>
+                        </Modal> :
                         <div></div>
                 }
             </div>

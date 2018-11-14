@@ -12,7 +12,7 @@ export default class RideIndex extends Component {
             rides: [],
             modal: false,
             updatePressed: false,
-            rideToUpdate: {},
+            rideToUpdate: {}
         };
 
         this.toggle = this.toggle.bind(this);
