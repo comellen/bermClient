@@ -78,7 +78,7 @@ export default class RideCreate extends Component {
                         <br />
                         <textarea rows="3" cols="30" id="notes" type="text" name="notes" value={this.state.notes} onChange={this.handleChange} />
                     </FormGroup>
-                    <Button type="submit" color="primary" onClick={this.props.fetchRides}>Submit</Button>
+                    <Button type="submit" color="primary" onClick={(e) => {this.props.fetchRides(); this.props.toggle()}}>Submit</Button>
                 </Form>
             </div >
         );

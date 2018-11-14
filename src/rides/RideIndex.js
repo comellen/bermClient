@@ -90,7 +90,7 @@ export default class RideIndex extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Ride</ModalHeader>
                     <ModalBody>
-                        <RideCreate sessionToken={this.props.sessionToken} fetchRides={this.fetchRides} />
+                        <RideCreate sessionToken={this.props.sessionToken} fetchRides={this.fetchRides} toggle={this.toggle} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>

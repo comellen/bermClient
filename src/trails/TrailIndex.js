@@ -90,7 +90,7 @@ export default class TrailIndex extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Trail</ModalHeader>
                     <ModalBody>
-                        <TrailCreate sessionToken={this.props.sessionToken} fetchTrails={this.fetchTrails} />
+                        <TrailCreate sessionToken={this.props.sessionToken} fetchTrails={this.fetchTrails} toggle={this.toggle} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
