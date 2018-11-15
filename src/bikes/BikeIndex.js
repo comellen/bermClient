@@ -84,6 +84,7 @@ export default class BikeIndex extends Component {
         })
             .then(res => this.fetchBikes());
     }
+    
     render() {
         const bikes = this.state.bikes.length >= 1 ?
             <BikeCards

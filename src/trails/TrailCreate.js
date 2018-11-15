@@ -44,12 +44,17 @@ export default class TrailCreate extends Component {
                 });
             });
             this.props.fetchTrails();
-    }
+            this.refresh();
+        }
+    
+        refresh = () => {
+            this.props.fetchTrails();
+        }
 
     render() {
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
+                <Form className="addForm" onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="name">Name</Label>
                         <br />

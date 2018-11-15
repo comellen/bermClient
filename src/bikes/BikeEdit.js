@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class BikeEdit extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ export default class BikeEdit extends Component {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.setState({
             id: this.props.bike.id,
             brand: this.props.bike.brand,
@@ -43,7 +43,6 @@ export default class BikeEdit extends Component {
             additionalComponents: this.props.bike.additionalComponents,
             plannedUpgrades: this.props.bike.plannedUpgrades
         });
-        console.log(this.state)
     }
 
     handleChange = (event) => {

@@ -76,11 +76,8 @@ export default class App extends Component {
     return (
       <div>
         <Router>
-          <div>
             {this.protectedViews()}
-          </div>
         </Router>
-
       </div>
     );
   }

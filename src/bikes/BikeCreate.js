@@ -39,7 +39,7 @@ export default class BikeCreate extends Component {
                 'Authorization': this.props.sessionToken
             })
         })
-            .then((res) => console.log(res))
+            .then((res) => (console.log(res)))
             .then((newBike) => {
                 this.setState({
                     brand: '',
@@ -60,12 +60,17 @@ export default class BikeCreate extends Component {
                 });
             });
             this.props.fetchBikes();
-    }
+            this.refresh();
+        }
+    
+        refresh = () => {
+            this.props.fetchBikes();
+        }
 
     render() {
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
+                <Form className="addForm" onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="brand">Brand</Label>
                         <br />
@@ -84,7 +89,7 @@ export default class BikeCreate extends Component {
                     <FormGroup>
                         <Label for="frame">Frame</Label>
                         <br />
-                        <Input id="frame" type="text" name="frame" value={this.state.frame} placeholder="aluminum" onChange={this.handleChange} />
+                        <Input id="frame" type="text" name="frame" value={this.state.frame} placeholder="" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="suspension">Suspension</Label>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, Button } from 'reactstrap';
 import bikeicon from '../assets/bikeicon.png';
 
 const BikeCards = (props) => {

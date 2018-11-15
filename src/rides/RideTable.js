@@ -21,7 +21,6 @@ const RideTable = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {console.log(props.rides)}
                     {props.rides.map((ride, id) => {
                         return (
                             <tr key={id}>

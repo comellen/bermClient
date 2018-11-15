@@ -42,6 +42,11 @@ export default class RideCreate extends Component {
                 });
             });
             this.props.fetchRides();
+            this.refresh();
+    }
+
+    refresh = () => {
+        this.props.fetchRides();
     }
 
     render() {

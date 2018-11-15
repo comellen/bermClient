@@ -1,9 +1,6 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
-import { Route, Link, Switch } from 'react-router-dom';
-import BikeIndex from '../bikes/BikeIndex';
-import RideIndex from '../rides/RideIndex';
-import TrailIndex from '../trails/TrailIndex';
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import bikesImg from '../assets/bikesalt.png';
 import trailsImg from '../assets/trailsalt.png';
 import ridesImg from '../assets/ridesalt.png';

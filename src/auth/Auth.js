@@ -19,10 +19,12 @@ export default class Auth extends Component {
     render() {
         return (
             <Container className="authWrapper">
-                <span className="bermInfo">
+            <div className="bermInfo">
+                <span>
                 <h1 className="bigLogo">berm</h1>
                 <h3>Track your mountain biking journey with <span className="logoText">berm</span>. Keep track of your bikes and upgrades, add the collection of trails you've ridden and trails you want to ride,  and keep track of and update your trail times.</h3>
                 </span>
+                </div>
                 <div className="authContainer">
                     <div className="authDiv">
                         {(this.state.signingUp) ?

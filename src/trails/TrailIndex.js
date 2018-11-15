@@ -117,7 +117,7 @@ export default class TrailIndex extends Component {
                             <ModalHeader>Edit Trail</ModalHeader>
                             <ModalBody>
                                 <TrailEdit
-                                    pressed={this.state.updatePressed}
+                                    toggleUpdate={this.toggleUpdate}
                                     update={this.trailUpdate}
                                     trail={this.state.trailToUpdate} />
                             </ModalBody>
