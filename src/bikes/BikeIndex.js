@@ -96,7 +96,7 @@ export default class BikeIndex extends Component {
             <h2>☝️ Add bikes here.</h2>
 
         return (
-            <div className="bikeCards">
+            <div className="indexes">
                 <Button className="addButton" color="success" onClick={this.toggle}>Add a bike</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Bike</ModalHeader>

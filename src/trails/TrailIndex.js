@@ -97,7 +97,7 @@ export default class TrailIndex extends Component {
             <h2>☝️ Enter a trail for your list.</h2>
 
         return (
-            <div className="trailPage">
+            <div className="indexes">
                 <Button className="addButton" color="success" onClick={this.toggle}>Add a trail</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Add Trail</ModalHeader>

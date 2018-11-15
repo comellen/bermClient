@@ -14,19 +14,16 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.bikeCards {
-    padding: 1em;
-}
-
 .cardContainer {
     justify-content: center;
 }
 
 .bikeCard {
     width: 333px;
+    min-width: 333px !important;
     height: 600px;
     float: left;
-    margin: auto;
+    margin: 0 4em 0 4em;
     border: none !important;
     box-shadow: 0px 8px 18px #c4c4c4;
 }
@@ -36,12 +33,15 @@
 }
 
 .bikeIcon {
-    max-width: 100% !important;
-    max-height: 100% !important;
+    max-width: 60px !important;
+    max-height: 60px !important;
+    float: right;
+    margin: .5em 4em 0 0;
 }
 
 .cardTitle {
     padding-bottom: 1em;
+    font-weight: 600;
 }
 
 .cardButtons {

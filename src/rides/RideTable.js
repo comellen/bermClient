@@ -10,6 +10,7 @@ const RideTable = (props) => {
             <Table striped>
                 <thead>
                     <tr>
+                        <th></th>
                         <th>#</th>
                         <th>Trail</th>
                         <th>Location</th>

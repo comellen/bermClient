@@ -4,9 +4,9 @@ import { Route, Link, Switch } from 'react-router-dom';
 import BikeIndex from '../bikes/BikeIndex';
 import RideIndex from '../rides/RideIndex';
 import TrailIndex from '../trails/TrailIndex';
-import bikesImg from '../assets/bikes.png';
-import trailsImg from '../assets/trails.png';
-import ridesImg from '../assets/rides.png';
+import bikesImg from '../assets/bikesalt.png';
+import trailsImg from '../assets/trailsalt.png';
+import ridesImg from '../assets/ridesalt.png';
 import './Home.css';
 
 const Home = (props) => {
@@ -45,7 +45,7 @@ const Home = (props) => {
                         <CardBody>
                             <CardTitle>Bikes</CardTitle>
                             <hr />
-                            <CardSubtitle>Add or edit a bike. Keep track of components.</CardSubtitle>
+                            <CardSubtitle>Keep track of your bikes and components.</CardSubtitle>
                         </CardBody>
                     </Card>
                 </div>

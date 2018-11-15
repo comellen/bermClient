@@ -1,19 +1,31 @@
-@font-face {
-    font-family: 'Exo 2';
-    src: url('https://fonts.googleapis.com/css?family=Exo+2');
-}
+@import url('https://fonts.googleapis.com/css?family=Exo+2:600i');
 
 .logo {
     font-family: 'Exo 2', sans-serif;
-    color: #272722 !important;
+    font-size: 40px;
+    color: #333;
+    padding: .1em 0 0 .4em
+}
+.logo:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.navBar {
+    font-family: 'Lato', sans-serif;
 }
 
 .navLink {
     color: #666;
-    margin-top: 1em;
     margin-right: 4em;
 }
-.navLink:click {
-    text-decoration: none;
-    color: #272722;
+
+.navLink:hover {
+    text-decoration: none !important;
+    color: #333;
+}
+
+.logout {
+    width: 100px;
+    margin: 0 1em 0 1em;
 }

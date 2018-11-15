@@ -47,7 +47,7 @@ export default class RideCreate extends Component {
     render() {
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
+                <Form className="addForm" onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="trail">Trail</Label>
                         <br />

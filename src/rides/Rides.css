@@ -14,13 +14,10 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+
 .addButton {
     margin-bottom: 2em;
     width: 120px;
-}
-
-.ridePage {
-    padding: 1em;
 }
 
 .rideTable {
