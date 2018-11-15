@@ -76,7 +76,7 @@ export default class RideCreate extends Component {
                     <FormGroup>
                         <Label for="date">Date</Label>
                         <br />
-                        <Input id="date" type="text" name="date" value={this.state.date} placeholder="YYYY/MM/DD" onChange={this.handleChange} />
+                        <Input id="date" type="date" min="1900-01-01" name="date"  value={this.state.date} onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="notes">Notes</Label>

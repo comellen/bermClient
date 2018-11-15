@@ -69,7 +69,7 @@ export default class RideEdit extends Component {
                 <FormGroup>
                     <Label for="date">Date</Label>
                     <br />
-                    <Input id="date" type="text" name="date" value={this.state.date} placeholder="YYYY/MM/DD" onChange={this.handleChange} />
+                    <Input  id="date" type="date" min="1900-01-01" name="date" value={this.state.date} onChange={this.handleChange} />
                 </FormGroup>
                 <Button type="submit" color="primary">Submit</Button>
                 <Button color="secondary" onClick={e => this.props.toggleUpdate()}>Cancel</Button>

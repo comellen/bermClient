@@ -56,7 +56,7 @@ export default class TrailCreate extends Component {
             <div>
                 <Form className="addForm" onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Label for="name">Name</Label>
+                        <Label for="name">Trail Name</Label>
                         <br />
                         <Input id="name" type="text" name="name" value={this.state.name} onChange={this.handleChange} />
                     </FormGroup>

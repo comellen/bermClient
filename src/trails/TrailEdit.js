@@ -43,7 +43,7 @@ export default class TrailEdit extends Component {
         return (
             <Form onSubmit={this.handleSubmit}>
                 <FormGroup>
-                    <Label for="name">Name</Label>
+                    <Label for="name">Trail Name</Label>
                     <br />
                     <Input id="name" type="text" name="name" value={this.state.name} onChange={this.handleChange} />
                 </FormGroup>
