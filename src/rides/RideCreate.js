@@ -40,9 +40,8 @@ export default class RideCreate extends Component {
                     notes: '',
                     date: '',
                 });
-            });
-            this.props.fetchRides();
-            this.refresh();
+            })
+            .then(e => this.props.fetchRides());
     }
 
     refresh = () => {

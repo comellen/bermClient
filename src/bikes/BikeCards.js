@@ -12,7 +12,7 @@ const BikeCards = (props) => {
                         <img className="bikeIcon" src={bikeicon} alt="bike icon" />
                         </div>
                         <CardBody>
-                            <CardTitle className="cardTitle">{bike.year} {bike.brand} {bike.model}</CardTitle>
+                            <CardTitle className="cardTitle"> {bike.year} {bike.brand} {bike.model}</CardTitle>
                             <ul>
                                 <li>Frame: {bike.frame}</li>
                                 <li>Suspension: {bike.suspension}</li>

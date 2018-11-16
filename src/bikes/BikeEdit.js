@@ -72,7 +72,7 @@ export default class BikeEdit extends Component {
                 <FormGroup>
                     <Label for="year">Year</Label>
                     <br />
-                    <Input id="year" type="integer" name="year" value={this.state.year} onChange={this.handleChange} />
+                    <Input id="year" type="text" name="year" value={this.state.year} onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="frame">Frame</Label>

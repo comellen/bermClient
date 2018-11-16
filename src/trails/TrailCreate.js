@@ -42,13 +42,8 @@ export default class TrailCreate extends Component {
                 completed: '',
                 date: ''
                 });
-            });
-            this.props.fetchTrails();
-            this.refresh();
-        }
-    
-        refresh = () => {
-            this.props.fetchTrails();
+            })
+            .then(e => this.props.fetchTrails());
         }
 
     render() {

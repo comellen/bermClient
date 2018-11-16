@@ -58,13 +58,8 @@ export default class BikeCreate extends Component {
                     additionalComponents: '',
                     plannedUpgrades: ''
                 });
-            });
-            this.props.fetchBikes();
-            this.refresh();
-        }
-    
-        refresh = () => {
-            this.props.fetchBikes();
+            })
+            .then(e => this.props.fetchBikes());
         }
 
     render() {
@@ -84,7 +79,7 @@ export default class BikeCreate extends Component {
                     <FormGroup>
                         <Label for="year">Year</Label>
                         <br />
-                        <Input id="year" type="integer" name="year" value={this.state.year} placeholder="" onChange={this.handleChange} />
+                        <Input id="year" type="text" name="year" value={this.state.year} placeholder="" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="frame">Frame</Label>
