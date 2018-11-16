@@ -11,7 +11,6 @@ const TrailTable = (props) => {
                 <thead>
                     <tr>
                         <th></th>
-                        <th>#</th>
                         <th>Name</th>
                         <th>Location</th>
                         <th>Length</th>
@@ -26,7 +25,6 @@ const TrailTable = (props) => {
                         return (
                             <tr key={id}>
                             <img className="trailIcon" src={trailicon} alt="trail icon" />
-                                <th scope="row">{trail.id}</th>
                                 <td>{trail.name}</td>
                                 <td>{trail.location}</td>
                                 <td>{trail.length}</td>

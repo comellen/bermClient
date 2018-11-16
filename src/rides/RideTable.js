@@ -11,7 +11,6 @@ const RideTable = (props) => {
                 <thead>
                     <tr>
                         <th></th>
-                        <th>#</th>
                         <th>Trail</th>
                         <th>Location</th>
                         <th>Bike</th>
@@ -25,7 +24,6 @@ const RideTable = (props) => {
                         return (
                             <tr key={id}>
                             <img className="rideIcon" src={rideicon} alt="ride icon" />
-                                <th scope="row">{ride.id}</th>
                                 <td>{ride.trail}</td>
                                 <td>{ride.location}</td>
                                 <td>{ride.bike}</td>
