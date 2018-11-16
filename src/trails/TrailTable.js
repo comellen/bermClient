@@ -24,7 +24,7 @@ const TrailTable = (props) => {
                     {props.trails.map((trail, id) => {
                         return (
                             <tr key={id}>
-                            <img className="trailIcon" src={trailicon} alt="trail icon" />
+                                <img className="trailIcon" src={trailicon} alt="trail icon" />
                                 <td>{trail.name}</td>
                                 <td>{trail.location}</td>
                                 <td>{trail.length}</td>
@@ -33,9 +33,8 @@ const TrailTable = (props) => {
                                 <td>{trail.completed}</td>
                                 <td>{trail.date}</td>
                                 <td>
-                                    <Button className="tableButtons" id={trail.id} onClick={e => {props.setUpdatedTrail(e, trail); props.toggleUpdate()}} color="info">Update</Button>
-
                                     <Button className="tableButtons" id={trail.id} onClick={e => props.delete(e, trail)} color="danger">Delete</Button>
+                                    <Button className="tableButtons" id={trail.id} onClick={e => { props.setUpdatedTrail(e, trail); props.toggleUpdate() }} color="info">Update</Button>
                                 </td>
                             </tr>
                         );

@@ -22,11 +22,11 @@
     width: 333px;
     min-width: 333px;
     color: #333;;
-    box-shadow: 0px 8px 18px #c4c4c4;
+    box-shadow: 0px 4px 9px #c4c4c4;
     border-radius: 4px;
     text-decoration: none !important;
 }
 
 .cards:hover {
-    box-shadow: 0px 25px 44px #c4c4c4;
+    box-shadow: 0px 12px 22px #c4c4c4;
 }

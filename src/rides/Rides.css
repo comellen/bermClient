@@ -14,7 +14,6 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-
 .addButton {
     margin-bottom: 2em;
     width: 120px;
@@ -33,14 +32,7 @@
 }
 
 .tableButtons {
-    margin: 0 1em 0.3em 1em;
+    margin: 0.3em 1em 0em 1em;
     width: 88px;
-}
-
-.rideTable {
-    padding: 1em;
-}
-
-.addButton {
-    margin-bottom: 2em;
+    float: right;
 }

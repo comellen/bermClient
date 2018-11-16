@@ -19,10 +19,6 @@
     width: 120px;
 }
 
-.trailPage {
-    padding: 1em;  
-}
-
 .trailTable {
     box-shadow: 0px 8px 18px #c4c4c4;
     min-width: 1020px;
@@ -33,10 +29,10 @@
     max-width: 60px;
     max-height: 60px;
     margin: .5em;
-
 }
 
 .tableButtons {
-    margin: 0 1em 0.3em 1em;
+    margin: 0.3em 1em 0em 1em;
     width: 88px;
+    float: right;
 }
