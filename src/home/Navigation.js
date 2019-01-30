@@ -20,9 +20,9 @@ export default class Navigation extends Component {
             <div>
                 <div>
                     <Navbar className="navBar" light expand="sm">
+                        <Collapse isOpen={this.state.isOpen} navbar>
                         <a className="logo" href="/">berm</a>
                         <NavbarToggler onClick={this.toggle} />
-                        <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <Link to="/rides"><span className="navLink">Rides</span></Link>
                                 <Link to="/trails"><span className="navLink">Trails</span></Link>
